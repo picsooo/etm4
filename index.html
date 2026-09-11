@@ -612,9 +612,9 @@
 
     <div class="rv">
       <div class="form">
-        <form id="cf" action="https://formsubmit.co/etm.carsolution@gmail.com" method="POST" novalidate>
+        <form id="cf" action="https://formsubmit.co/wsaoudi@webminds.dz" method="POST" novalidate>
           <input type="hidden" name="_subject" value="Nouvelle demande — site ETM Car-Solution">
-          <input type="hidden" name="_cc" value="wsaoudi@webminds.dz">
+          <input type="hidden" name="_cc" value="etm.carsolution@gmail.com">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_autoresponse" value="Bonjour,
@@ -781,7 +781,7 @@ const DATA={
     const b=f.querySelector('button[type=submit]');
     b.disabled=true;b.textContent='Envoi en cours…';
     try{
-      const r=await fetch('https://formsubmit.co/ajax/etm.carsolution@gmail.com',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(f)))});
+      const r=await fetch('https://formsubmit.co/ajax/wsaoudi@webminds.dz',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(f)))});
       if(!r.ok)throw 0;
       f.style.display='none';
       const o=document.getElementById('ok');o.style.display='block';
