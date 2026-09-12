@@ -321,6 +321,35 @@
   footer b{color:#fff}
   .bar2{background:rgba(255,255,255,.97);border-top:1px solid var(--bord)}
   .bar2 .gh{background:#fff}
+
+  /* ---- hero stars badge ---- */
+  .hero-stars{display:inline-flex;align-items:center;gap:10px;margin-top:22px;padding:10px 18px;background:rgba(255,255,255,.07);border:1px solid rgba(168,129,26,.3);border-radius:8px;backdrop-filter:blur(6px)}
+  .hero-stars .stars{display:flex;gap:2px;color:#f5b800;font-size:18px;line-height:1}
+  .hero-stars .stars svg{width:18px;height:18px;fill:#f5b800}
+  .hero-stars .rating{font-weight:700;font-size:15px;color:#fff}
+  .hero-stars .count{font-size:13.5px;color:var(--gris2)}
+  .hero-stars .g-icon{width:16px;height:16px;margin-left:2px;vertical-align:-2px}
+
+  /* ---- avis section ---- */
+  .avis-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+  .avis-card{background:var(--n2);border:1px solid var(--bord);border-radius:12px;padding:28px;transition:box-shadow .2s,border-color .2s}
+  .avis-card:hover{border-color:var(--or);box-shadow:0 8px 32px rgba(168,129,26,.1)}
+  .avis-top{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+  .avis-avatar{width:48px;height:48px;border-radius:50%;background:var(--or);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px;color:#0a0a0a;flex:none}
+  .avis-meta{flex:1}
+  .avis-name{font-weight:700;font-size:15px}
+  .avis-date{font-size:12.5px;color:var(--gris2)}
+  .avis-g{display:inline-flex;align-items:center;gap:4px;font-size:11.5px;font-weight:600;color:var(--gris2);background:var(--n1);border:1px solid var(--bord);border-radius:4px;padding:2px 7px;margin-left:8px}
+  .avis-g svg{width:14px;height:14px}
+  .avis-stars{display:flex;gap:2px;margin-bottom:12px}
+  .avis-stars svg{width:16px;height:16px;fill:#f5b800}
+  .avis-text{font-size:15px;color:var(--gris);line-height:1.6}
+  .avis-summary{display:flex;align-items:center;justify-content:center;gap:20px;padding:24px;background:var(--n1);border:1px solid var(--bord);border-radius:12px;margin-bottom:clamp(30px,4vw,48px)}
+  .avis-summary .big{font-family:var(--cond);font-size:48px;font-weight:700;color:var(--or);line-height:1}
+  .avis-summary .stars-lg{display:flex;gap:3px}
+  .avis-summary .stars-lg svg{width:24px;height:24px;fill:#f5b800}
+  .avis-summary .total{font-size:15px;color:var(--gris)}
+  @media(max-width:600px){.avis-grid{grid-template-columns:1fr}.avis-summary{flex-direction:column;gap:10px}}
 </style>
 </head>
 <body>
@@ -372,6 +401,11 @@
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Opération réversible</span>
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Tolérances constructeur respectées</span>
       </div>
+      <a href="#avis" class="hero-stars">
+        <span class="stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg></span>
+        <span class="rating">5.0</span>
+        <span class="count">· 29 avis <svg class="g-icon" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg></span>
+      </a>
     </div>
 
     <div class="sim rv" id="sim">
@@ -571,6 +605,77 @@
       <details class="q"><summary>Le voyant airbag reste allumé après un choc, que faire ?</summary><p>Le calculateur airbag a enregistré les données de crash et se bloque tant qu'elles ne sont pas traitées. Nous effectuons la réparation du boîtier et la remise à zéro, sans remplacement complet du module.</p></details>
       <details class="q"><summary>Intervenez-vous sur tous les véhicules ?</summary><p>Toutes marques, pour le diagnostic, le clonage et la réparation. Pour la reprogrammation, la faisabilité dépend du calculateur exact équipant votre véhicule — certains blocs récents sont verrouillés par le constructeur. Un appel suffit pour le vérifier.</p></details>
       <details class="q"><summary>Quels sont vos tarifs ?</summary><p>Le prix est annoncé après le diagnostic, jamais avant : une même panne peut demander une réparation simple ou le remplacement d'un module complet. Le diagnostic vous est présenté avec un prix ferme, que vous êtes libre d'accepter ou non.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= AVIS CLIENTS ================= -->
+<section id="avis">
+  <div class="wrap">
+    <div class="head c">
+      <span class="kick">Témoignages</span>
+      <h2>Ce que disent nos clients</h2>
+      <p class="lead">Des dizaines de véhicules transformés, des clients satisfaits à Toulouse et dans toute la Haute-Garonne.</p>
+    </div>
+
+    <div class="avis-summary">
+      <span class="big">5.0</span>
+      <div>
+        <div class="stars-lg"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg></div>
+        <span class="total">Basé sur 29 avis Google</span>
+      </div>
+    </div>
+
+    <div class="avis-grid">
+
+      <div class="avis-card">
+        <div class="avis-top">
+          <div class="avis-avatar">K</div>
+          <div class="avis-meta">
+            <div class="avis-name">Karim B. <span class="avis-g"><svg viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg> Google</span></div>
+            <div class="avis-date">12/08/2026</div>
+          </div>
+        </div>
+        <div class="avis-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg></div>
+        <p class="avis-text">Reprogrammation Stage 1 sur ma Golf 7 GTD, résultat impressionnant. Le moteur est beaucoup plus souple et réactif. Travail propre et professionnel, je recommande vivement ETM.</p>
+      </div>
+
+      <div class="avis-card">
+        <div class="avis-top">
+          <div class="avis-avatar">S</div>
+          <div class="avis-meta">
+            <div class="avis-name">Sofiane M. <span class="avis-g"><svg viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg> Google</span></div>
+            <div class="avis-date">28/07/2026</div>
+          </div>
+        </div>
+        <div class="avis-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg></div>
+        <p class="avis-text">Problème de calculateur sur ma Clio 4 que personne n'arrivait à résoudre. ETM a diagnostiqué la panne en 30 minutes et réparé le jour même. Tarif très correct pour la qualité du service. Merci !</p>
+      </div>
+
+      <div class="avis-card">
+        <div class="avis-top">
+          <div class="avis-avatar">L</div>
+          <div class="avis-meta">
+            <div class="avis-name">Laurent D. <span class="avis-g"><svg viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg> Google</span></div>
+            <div class="avis-date">15/06/2026</div>
+          </div>
+        </div>
+        <div class="avis-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg></div>
+        <p class="avis-text">Suppression voyant FAP et EGR sur mon 3008 2.0 HDi. Travail sérieux, explications claires avant et après l'intervention. La voiture roule comme neuve. Je reviendrai pour la reprog Stage 1.</p>
+      </div>
+
+      <div class="avis-card">
+        <div class="avis-top">
+          <div class="avis-avatar">N</div>
+          <div class="avis-meta">
+            <div class="avis-name">Nadia R. <span class="avis-g"><svg viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg> Google</span></div>
+            <div class="avis-date">03/05/2026</div>
+          </div>
+        </div>
+        <div class="avis-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg></div>
+        <p class="avis-text">Clonage de calculateur BSI sur ma 308 après une panne totale. Aucun garage classique ne voulait s'en occuper. ETM a tout remis en état en moins de 48h. Professionnel et tarif imbattable.</p>
+      </div>
+
     </div>
   </div>
 </section>
