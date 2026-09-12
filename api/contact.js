@@ -1,15 +1,3 @@
-const nodemailer = require('nodemailer');
-
-const transporter = nodemailer.createTransport({
-  host: 'mail.etmcar-solution.com',
-  port: 465,
-  secure: true,
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
-  },
-});
-
 function adminTemplate(data) {
   const rows = [
     ['Nom', data.Nom],
@@ -151,6 +139,22 @@ function clientTemplate() {
 </td></tr></table></body></html>`;
 }
 
+async function sendEmail(apiKey, params) {
+  const res = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${apiKey}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(params),
+  });
+  if (!res.ok) {
+    const err = await res.text();
+    throw new Error(`Resend error: ${res.status} ${err}`);
+  }
+  return res.json();
+}
+
 module.exports = async (req, res) => {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
@@ -158,25 +162,26 @@ module.exports = async (req, res) => {
 
   try {
     const data = req.body;
+    const apiKey = process.env.RESEND_API_KEY;
 
     if (!data.Nom || !data['Téléphone']) {
       return res.status(400).json({ error: 'Nom et Téléphone requis' });
     }
 
     // Email admin — notification avec infos client
-    await transporter.sendMail({
-      from: '"ETM Car-Solution" <noreply@etmcar-solution.com>',
-      to: 'wsaoudi@webminds.dz',
-      cc: 'etm.carsolution@gmail.com',
+    await sendEmail(apiKey, {
+      from: 'ETM Car-Solution <noreply@etmcar-solution.com>',
+      to: ['wsaoudi@webminds.dz'],
+      cc: ['etm.carsolution@gmail.com'],
       subject: `Nouvelle demande — ${data.Nom} — ${data.Prestation || 'Devis'}`,
       html: adminTemplate(data),
     });
 
     // Auto-réponse au client (si email fourni)
     if (data.email) {
-      await transporter.sendMail({
-        from: '"ETM Car-Solution" <noreply@etmcar-solution.com>',
-        to: data.email,
+      await sendEmail(apiKey, {
+        from: 'ETM Car-Solution <noreply@etmcar-solution.com>',
+        to: [data.email],
         subject: 'ETM Car-Solution — Votre demande a bien été reçue',
         html: clientTemplate(),
       });
@@ -185,6 +190,6 @@ module.exports = async (req, res) => {
     return res.status(200).json({ success: true });
   } catch (err) {
     console.error('Mail error:', err);
-    return res.status(500).json({ error: 'Erreur envoi email' });
+    return res.status(500).json({ error: 'Erreur envoi email', details: err.message });
   }
 };

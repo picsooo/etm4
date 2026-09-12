@@ -16,8 +16,5 @@
   "bugs": {
     "url": "https://github.com/picsooo/etm4/issues"
   },
-  "homepage": "https://github.com/picsooo/etm4#readme",
-  "dependencies": {
-    "nodemailer": "^10.0.9"
-  }
+  "homepage": "https://github.com/picsooo/etm4#readme"
 }
