@@ -771,7 +771,7 @@ const DATA={
     const b=f.querySelector('button[type=submit]');
     b.disabled=true;b.textContent='Envoi en cours…';
     try{
-      const r=await fetch('https://formsubmit.co/ajax/wsaoudi@webminds.dz',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(f)))});
+      const r=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(f)))});
       if(!r.ok)throw 0;
       f.style.display='none';
       const o=document.getElementById('ok');o.style.display='block';

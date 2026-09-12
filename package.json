@@ -1,0 +1,23 @@
+{
+  "name": "site",
+  "version": "1.0.0",
+  "description": "Exactement la même structure et le même contenu que la proposition C (version sombre). Seule la palette change — c'est une variante à comparer, pas une nouvelle maquette.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/picsooo/etm4.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/picsooo/etm4/issues"
+  },
+  "homepage": "https://github.com/picsooo/etm4#readme",
+  "dependencies": {
+    "nodemailer": "^10.0.9"
+  }
+}
